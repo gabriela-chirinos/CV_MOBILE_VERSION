@@ -1,5 +1,9 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 
-
+}
 body {
   background-color: rgb(0, 123, 255);
   margin: 1em 0;
@@ -9,6 +13,12 @@ ul {
   list-style: none;
   
 }
+
+
+
+
+
+
 
 .card {
   max-width: 90%;
@@ -30,6 +40,8 @@ nav {
   .nav_links {
     gap: 50px;
     line-height: 3.3em;
+    justify-content: center;
+    text-align: center;
     list-style: none;
     margin-right: 3em;
     text-transform: uppercase;
@@ -67,10 +79,12 @@ nav {
  }
 
 h1 {
+  flex: 1;
   font-size: 1.5rem;
   text-transform: uppercase;
   margin-right: auto;
   margin-left: 20px;
+ 
 }
 
 /* ------------------------------------- */
@@ -90,7 +104,10 @@ h1 {
 /* ------------------------------------- */
 
 .profile_container{
-  display: flex;
+  display: grid;
+
+  grid-template-columns: 1fr 2fr; 
+  grid-gap: 2em;
   height: 30em;
   margin: 3% 3%;
   padding: 3em 2em;
@@ -121,30 +138,31 @@ h1 {
 
 .profile_info{
  background-color: #F6F6F6;
- margin: 4% 4%;
+margin: 2% 2%;
  padding-left: 5%;
+ 
 }
 
 .profile_info h2 {
-  font-size: 5rem; 
+  font-size: 3rem; 
   font-weight: bold;
-  letter-spacing: 1.6px;
-  padding-bottom: 20px;
+  letter-spacing: 1.8px;
+  padding-bottom: 5px;
 }
 
 .profile_info h4 {
   
   color: #9c9c9c;
   text-transform: uppercase;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   letter-spacing: 1.4px;
 }
 
 .profile_info p {
-  font-size: 3rem;
+  font-size: 1.5rem;
   width: 60%; 
   text-wrap: wrap; 
-  line-height: 25px;
+  line-height: 38px;
   letter-spacing: .7px;
   
 }
@@ -225,7 +243,9 @@ h1 {
 }
 
 
-
+.hamburgerMenu{
+  display: none;
+}
 
 
 /* Footer */
@@ -251,3 +271,271 @@ footer {
       padding-bottom: 20%;
     }
 }
+
+
+/****** MEDIA QUERIES *******/
+
+/* TABLET @ 768  */
+
+@media screen and (min-width: 760px){
+
+ .card{
+  width: 85vw;
+  padding: 1em 1em;
+ 
+ }
+
+  nav{
+    display: block;
+    width: 100%;
+    
+    
+  }
+  .logo {
+    display: flex;
+    width: 6vw;
+    height: 6vw;
+    font-size: 1.5rem;
+   }
+
+  nav > h1{
+    position: absolute;
+    transform: translate(3em, -1.2em);
+    font-size: 2rem;
+
+   }
+
+  .nav_links{
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+   
+
+  }
+  .contact_info{
+  display: flex;
+  justify-content: space-evenly;
+  transform: translate(-3em, 0em);
+  
+  }
+}
+
+.profile_container{
+  background-color: #F6F6F6;
+  display: flex;
+  width: 98%;
+  margin: 10px 10px;
+  border-radius: 30px;
+}
+
+.profile_circle {
+  width: 25vw;
+  height: 25vw;
+  border: 20px solid #ffffff;
+  box-shadow: 0px 8px 21px lightgray;
+}
+
+.profile_info > h2 {
+font-size: large;
+display: none;
+}
+
+.profile_info > h4 {
+  font-size: large;
+  padding-top: 1em;
+  }
+.profile_info p {
+    width: 100%;
+    font-size: 1.1rem; 
+    text-wrap: wrap; 
+    line-height: 30px;
+    letter-spacing: .9px;
+    margin-top: 28px;
+    padding: 0 5px;
+  
+}
+
+.technologies table{
+
+  width: 100%;
+  font-size: 1rem;
+}
+
+.contact_form{
+  justify-content:  center;
+  font-size: medium;
+  height: 70%;
+}
+.contact_form button {
+  transform: translate(7em, 8px);
+}
+
+footer{
+
+  font-size: medium;
+  width: 100%;
+}
+
+footer h4{
+  margin-bottom: 10px;
+}
+
+.creditInspo{
+  display: flex;
+  font-size: x-small;
+  font-style: italic;
+  letter-spacing: 2px;
+  font-weight: 800;
+  padding: 10px 0px;
+  justify-content: center;
+  align-items: center;
+ 
+
+}
+
+.creditInspo h5 {
+  margin: 0px 5px;
+}
+
+.creditInspo a {
+  display: flex;
+  text-decoration: none;
+  color: red;
+}
+.hamburgerMenu{
+  display: none;
+}
+
+
+/* mobile  media query  */
+
+@media screen and (max-width: 767px) {
+ 
+ .card {
+  width: 75%;
+  height: auto;
+ } 
+
+nav{
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav_links{
+margin: auto;
+line-height: 2.4em;
+
+}
+
+nav h1{
+  display: inline-flex;
+  align-self: center;
+  margin: 0;
+  padding-bottom: 20px;
+  width: max-content;
+}
+
+.logo {
+  margin-bottom: 1em;
+}
+
+
+
+
+
+.contact_info {
+  display: flex;
+  flex-direction: column-reverse;
+  text-transform: uppercase;
+  font-size: .6rem;
+  padding-bottom: 3px;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact_info > p {
+ margin-bottom: 15px;
+}
+
+
+.profile_container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: max-content;
+ 
+ 
+}
+
+
+.profile_circle {
+  margin: 0 auto;
+  justify-content: center;
+  justify-self: center;
+  width: 15vw;
+  height: 15vw;
+  border: 7px solid #ffffff;
+  box-shadow: 0px 4px 16px lightgray;
+}
+
+.profile_info h4{
+  display: inline-flex;
+  font-size: 10px;
+  margin-top: 30px;
+}
+
+.profile_info p {
+  text-align: center;
+  font-size: .8rem;
+  line-height: 22px;
+
+}
+
+
+.technologies {
+  display: flex;
+  flex-direction: column;
+}
+
+.technologies th,
+.technologies td {
+  padding: 2px 7px; 
+ 
+}
+
+.technologies tr { /* Style each table row */
+  display: flex; /* Make each row a flex container */
+  flex-direction: column; /* Stack table cells vertically */
+  width: 100%; /* Ensure full width on each row */
+  border-bottom: 2px dashed lightgray; /* Optional: Add a separator line */
+  padding: 10px 0; /* Add some padding */
+}
+
+.technologies ul {
+  font-size: 10px;
+}
+
+.contact_form {
+  font-size: 14px;
+}
+
+.contact_form button {
+  position: relative;
+  left: -40px;
+}
+
+footer{
+  font-size: 14px;
+}
+
+}
+
+
+
+
+
+
+
+
+
